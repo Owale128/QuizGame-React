@@ -42,13 +42,14 @@ export const Quiz: React.FC = () => {
     return (
         <div className="container">
             {showResult ? (
-            <div>
+                <div className="resultContainer">
                 <h1>Resultat</h1>
                 <p>Poäng: {score}/{questions.length}</p>
                 <button onClick={restartQuiz}>Restart Quiz</button>
             </div>
              ) : (
-                <div className="questionContainer">
+                 <div className="questionContainer">
+                     <h2>Quiz</h2>
                 <h3>{questions[currentQuestion]?.question}</h3>
                 <ul>
                 {questions[currentQuestion]?.options.map((option, index) => (
