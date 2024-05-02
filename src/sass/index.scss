@@ -66,5 +66,66 @@
     }
   }
 }
+.resultContainer {
+    
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.01rem solid black;
+    background: linear-gradient(to right bottom, rgba(253, 65, 65, 0.879), rgba(0, 163, 8, 0.863));
 
+    h1, h3 {
+        text-decoration: underline;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+ .correctAnswerContainer {
+    padding: 1.8rem;
+     margin: 1rem 0;
+     font-size: 1.3rem;
+     border-radius: 1rem;
+     background-color: white;
+     color: rgb(16, 105, 16);
+     border: 0.01rem solid black;
+
+     .correctAnswer {
+         margin: 0.5rem;
+         padding: 0.5rem;
+         border-radius: 0.5rem;
+         border: 0.01rem solid black;
+
+         &::marker {
+            color: black;
+         }
+         
+         &:hover {
+             color: white;
+             cursor: pointer;
+             background-color: rgb(5, 66, 5);
+         }
+     }
+ }
+
+    p {
+        color: blue;
+        margin: 1rem 0;
+        font-size: 2rem;
+    }
+   
+    button {
+        padding: 0.2rem;
+        font-size: 1rem;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        color: white;
+        background-color: black;
+        
+        &:hover {
+            color: rgb(255, 255, 255);
+            background-color: blue;
+        }
+    }
+    }
 }

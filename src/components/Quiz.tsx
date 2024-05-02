@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { IQuestion } from "../interface/IQuestion";
 import { fetchQuestions} from "./fetchQuestions";
+import { showCorrectAnswers } from "./ShowCorrectAnswers";
 
 
 export const Quiz: React.FC = () => {
@@ -8,6 +9,7 @@ export const Quiz: React.FC = () => {
     const[currentQuestion, setCurrentQuestion] = useState<number>(0);
     const [score, setScore] = useState<number>(0);
     const [showResult, setShowResult] = useState<boolean>(false);
+    const [correctAnswers, setCorrectAnswers] = useState<string[]>([]);
 
  
 
@@ -22,6 +24,7 @@ export const Quiz: React.FC = () => {
             setCurrentQuestion(nextQuestion);
         } else {
             setShowResult(true);
+            setCorrectAnswers(showCorrectAnswers(questions));
         }
     };
 
@@ -37,6 +40,7 @@ export const Quiz: React.FC = () => {
         setCurrentQuestion(0);
         setScore(0);
         setShowResult(false);
+        setCorrectAnswers([]);
     };
 
     return (
@@ -45,6 +49,12 @@ export const Quiz: React.FC = () => {
                 <div className="resultContainer">
                 <h1>Resultat</h1>
                 <p>Poäng: {score}/{questions.length}</p>
+                <h3>Rätta svar:</h3>
+                <ol className="correctAnswerContainer">
+                    {correctAnswers.map((answer, index) =>(
+                        <li key={index} className="correctAnswer">{answer}</li>
+                    ))}
+                </ol>
                 <button onClick={restartQuiz}>Restart Quiz</button>
             </div>
              ) : (

@@ -57,4 +57,56 @@
 .container .questionContainer ul li:hover {
   color: white;
   background-color: rgb(39, 150, 39);
+}
+.container .resultContainer {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.01rem solid black;
+  background: linear-gradient(to right bottom, rgba(253, 65, 65, 0.879), rgba(0, 163, 8, 0.863));
+}
+.container .resultContainer h1, .container .resultContainer h3 {
+  text-decoration: underline;
+}
+.container .resultContainer h3 {
+  font-size: 1.3rem;
+}
+.container .resultContainer .correctAnswerContainer {
+  padding: 1.8rem;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  background-color: white;
+  color: rgb(16, 105, 16);
+  border: 0.01rem solid black;
+}
+.container .resultContainer .correctAnswerContainer .correctAnswer {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 0.01rem solid black;
+}
+.container .resultContainer .correctAnswerContainer .correctAnswer::marker {
+  color: black;
+}
+.container .resultContainer .correctAnswerContainer .correctAnswer:hover {
+  color: white;
+  cursor: pointer;
+  background-color: rgb(5, 66, 5);
+}
+.container .resultContainer p {
+  color: blue;
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+.container .resultContainer button {
+  padding: 0.2rem;
+  font-size: 1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+.container .resultContainer button:hover {
+  color: rgb(255, 255, 255);
+  background-color: blue;
 }/*# sourceMappingURL=index.css.map */
