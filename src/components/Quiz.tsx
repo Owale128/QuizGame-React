@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { IQuestion } from "../interface/IQuestion";
 import { fetchQuestions} from "./fetchQuestions";
 import { showCorrectAnswers } from "./ShowCorrectAnswers";
+import { shuffleQuestions } from "./ShuffleQuestions";
 
 
 export const Quiz: React.FC = () => {
@@ -31,7 +32,7 @@ export const Quiz: React.FC = () => {
     useEffect(() => {
         const getQuestions = async () => {
             const fetchedQuestions = await fetchQuestions();
-            setQuestions(fetchedQuestions)
+            setQuestions(shuffleQuestions(fetchedQuestions))
         };
         getQuestions();
     }, [])
@@ -40,6 +41,7 @@ export const Quiz: React.FC = () => {
         setCurrentQuestion(0);
         setScore(0);
         setShowResult(false);
+        setQuestions(shuffleQuestions(questions))
         setCorrectAnswers([]);
     };
 
@@ -63,7 +65,9 @@ export const Quiz: React.FC = () => {
                 <h3>{questions[currentQuestion]?.question}</h3>
                 <ul>
                 {questions[currentQuestion]?.options.map((option, index) => (
-                <li key={index} onClick={() => handleAnswer(index)}>{option}</li>
+                <li key={index} onClick={() => handleAnswer(index)}>
+                    {option}
+                </li>
                 ))}
           
                 </ul>
