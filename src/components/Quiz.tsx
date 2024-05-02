@@ -39,5 +39,25 @@ export const Quiz: React.FC = () => {
         setShowResult(false);
     };
 
-
+    return (
+        <div className="container">
+            {showResult ? (
+            <div>
+                <h1>Resultat</h1>
+                <p>Poäng: {score}/{questions.length}</p>
+                <button onClick={restartQuiz}>Restart Quiz</button>
+            </div>
+             ) : (
+                <div className="questionContainer">
+                <h3>{questions[currentQuestion]?.question}</h3>
+                <ul>
+                {questions[currentQuestion]?.options.map((option, index) => (
+                <li key={index} onClick={() => handleAnswer(index)}>{option}</li>
+                ))}
+          
+                </ul>
+                </div>
+        )}
+        </div>
+    )
 }
