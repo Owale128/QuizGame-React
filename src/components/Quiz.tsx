@@ -3,23 +3,17 @@ import { IQuestion } from "../interface/IQuestion";
 import { fetchQuestions} from "./fetchQuestions";
 import { showCorrectAnswers } from "./ShowCorrectAnswers";
 import { shuffleQuestions } from "./ShuffleQuestions";
-
-
 export const Quiz: React.FC = () => {
     const [questions, setQuestions] = useState<IQuestion[]>([]);
     const[currentQuestion, setCurrentQuestion] = useState<number>(0);
     const [score, setScore] = useState<number>(0);
     const [showResult, setShowResult] = useState<boolean>(false);
     const [correctAnswers, setCorrectAnswers] = useState<string[]>([]);
-
- 
-
     const handleAnswer = (selectedAnswerIndex: number) => {
         const isCorrect  = selectedAnswerIndex === questions[currentQuestion].correctAnswerIndex;
         if (isCorrect) {
             setScore(score + 1);
         }
-
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
@@ -40,7 +34,6 @@ export const Quiz: React.FC = () => {
         };
         getQuestions();
     }, [])
-
     const restartQuiz = () => {
         setCurrentQuestion(0);
         setScore(0);
@@ -48,7 +41,6 @@ export const Quiz: React.FC = () => {
         setQuestions(shuffleQuestions(questions))
         setCorrectAnswers([]);
     };
-
     return (
         <div className="container">
             {showResult ? (
