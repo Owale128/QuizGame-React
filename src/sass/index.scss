@@ -57,6 +57,7 @@
             margin-bottom: 0.5rem;
         background-color: black;
         border: 0.01rem solid black;
+        transition: 0.2s ease;
         
         &:hover {
             color: white;
@@ -97,6 +98,7 @@
          border: 0.01rem solid black;
          background-color: green;
          color: white;
+         transition: 0.2s ease;
 
          &::marker {
             color: black;
@@ -123,6 +125,7 @@
         cursor: pointer;
         color: white;
         background-color: black;
+        transition: 0.2s ease;
         
         &:hover {
             color: rgb(255, 255, 255);

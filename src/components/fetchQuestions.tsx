@@ -20,7 +20,7 @@ export const submitResult = async (username: string, score: number, userAnswers:
         const result = {
             username: username,
             score: score,
-            answers: userAnswers 
+            answers: userAnswers
         };
         const response = await fetch('http://localhost:3000/routes/userResult', {
             method: 'POST',

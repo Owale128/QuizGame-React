@@ -53,6 +53,7 @@
   margin-bottom: 0.5rem;
   background-color: black;
   border: 0.01rem solid black;
+  transition: 0.2s ease;
 }
 .container .questionContainer ul li:hover {
   color: white;
@@ -86,6 +87,7 @@
   border: 0.01rem solid black;
   background-color: green;
   color: white;
+  transition: 0.2s ease;
 }
 .container .resultContainer .correctAnswerContainer .correctAnswer::marker {
   color: black;
@@ -107,6 +109,7 @@
   cursor: pointer;
   color: white;
   background-color: black;
+  transition: 0.2s ease;
 }
 .container .resultContainer button:hover {
   color: rgb(255, 255, 255);
