@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IQuestion } from "../interface/IQuestion";
 import { fetchQuestions, submitResult } from "./fetchQuestions";
-import { showCorrectAnswers } from "./ShowCorrectAnswers";
 import { shuffleQuestions } from "./ShuffleQuestions";
 import { IUserAnswer } from "../interface/IUserAnswer";
 
@@ -10,7 +9,6 @@ export const Quiz: React.FC = () => {
     const [currentQuestion, setCurrentQuestion] = useState<number>(0);
     const [score, setScore] = useState<number>(0);
     const [showResult, setShowResult] = useState<boolean>(false);
-    const [correctAnswers, setCorrectAnswers] = useState<string[]>([]);
     const [userAnswers, setUserAnswers] = useState<IUserAnswer[]>([]);
     const [username, setUsername] = useState<string>("");
     const [usernameInput, setUsernameInput] = useState<string>("");
@@ -34,7 +32,6 @@ export const Quiz: React.FC = () => {
             setCurrentQuestion(nextQuestion);
         } else {
             setShowResult(true);
-            setCorrectAnswers(showCorrectAnswers(questions));
             submitResult(username, score, updatedUserAnswers);
         }
     };
@@ -60,6 +57,7 @@ export const Quiz: React.FC = () => {
         setScore(0);
         setShowResult(false);
         setUserAnswers([]);
+        setQuestions(shuffleQuestions(questions));
     };
 
     return (
@@ -82,10 +80,14 @@ export const Quiz: React.FC = () => {
                         <div className="resultContainer">
                             <h1>Resultat</h1>
                             <p>Poäng: {score}/{questions.length}</p>
-                            <h3>Rätta svar:</h3>
-                            <ol className="correctAnswerContainer">
-                                {correctAnswers.map((answer, index) => (
-                                    <li key={index} className="correctAnswer">{answer}</li>
+                            <h3>Dina svar:</h3>
+                            <ol className="userAnswerContainer">
+                                {userAnswers.map((answer, index) => (
+                                     <li 
+                                     key={index} 
+                                     className={answer.isCorrect ? "correct" : "incorrect"}>
+                                     {questions[index].options[answer.selectedOption]}
+                                 </li>
                                 ))}
                             </ol>
                             <button onClick={restartQuiz}>Starta om quizen</button>
@@ -108,4 +110,3 @@ export const Quiz: React.FC = () => {
         </div>
     )
 }
-

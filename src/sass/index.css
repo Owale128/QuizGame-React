@@ -71,7 +71,7 @@
 .container .resultContainer h3 {
   font-size: 1.3rem;
 }
-.container .resultContainer .correctAnswerContainer {
+.container .resultContainer .userAnswerContainer {
   padding: 1.8rem;
   margin: 1rem 0;
   font-size: 1.3rem;
@@ -80,22 +80,32 @@
   color: rgb(16, 105, 16);
   border: 0.01rem solid black;
 }
-.container .resultContainer .correctAnswerContainer .correctAnswer {
+.container .resultContainer .userAnswerContainer .correct, .container .resultContainer .userAnswerContainer .incorrect {
   margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 0.01rem solid black;
-  background-color: green;
   color: white;
   transition: 0.2s ease;
 }
-.container .resultContainer .correctAnswerContainer .correctAnswer::marker {
+.container .resultContainer .userAnswerContainer .correct::marker, .container .resultContainer .userAnswerContainer .incorrect::marker {
   color: black;
 }
-.container .resultContainer .correctAnswerContainer .correctAnswer:hover {
-  color: green;
+.container .resultContainer .userAnswerContainer .correct:hover, .container .resultContainer .userAnswerContainer .incorrect:hover {
   cursor: pointer;
   background-color: white;
+}
+.container .resultContainer .correct {
+  background-color: green;
+}
+.container .resultContainer .correct:hover {
+  color: green;
+}
+.container .resultContainer .incorrect {
+  background-color: red;
+}
+.container .resultContainer .incorrect:hover {
+  color: red;
 }
 .container .resultContainer p {
   color: blue;
@@ -114,4 +124,10 @@
 .container .resultContainer button:hover {
   color: rgb(255, 255, 255);
   background-color: blue;
+}
+.container .resultContainer .correctAnswer {
+  color: green;
+}
+.container .resultContainer .incorrectAnswer {
+  background-color: red;
 }/*# sourceMappingURL=index.css.map */

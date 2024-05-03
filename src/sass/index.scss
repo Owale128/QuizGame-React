@@ -82,7 +82,7 @@
         font-size: 1.3rem;
     }
 
- .correctAnswerContainer {
+ .userAnswerContainer {
     padding: 1.8rem;
      margin: 1rem 0;
      font-size: 1.3rem;
@@ -91,27 +91,43 @@
      color: rgb(16, 105, 16);
      border: 0.01rem solid black;
 
-     .correctAnswer {
+     .correct, .incorrect {
          margin: 0.5rem;
          padding: 0.5rem;
          border-radius: 0.5rem;
          border: 0.01rem solid black;
-         background-color: green;
          color: white;
          transition: 0.2s ease;
-
-         &::marker {
-            color: black;
-         }
          
-         &:hover {
-             color: green;
+         &::marker {
+             color: black;
+            }
+         
+            &:hover {
              cursor: pointer;
-            background-color: white;
-         }
-     }
+             background-color: white;
+            }
+        }
     }  
     
+    .correct {
+        background-color: green;
+
+        &:hover {
+            color: green;
+        }
+
+    }
+
+    .incorrect {
+
+        background-color: red;
+
+        &:hover {
+            color: red;
+        }
+    }
+
     p {
         color: blue;
         margin: 1rem 0;
@@ -132,6 +148,13 @@
             background-color: blue;
         }
     }   
+    .correctAnswer {
+        color: green;
+    }
+    
+    .incorrectAnswer {
+        background-color: red;
+    }
     
 }
 }
