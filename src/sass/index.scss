@@ -95,19 +95,21 @@
          padding: 0.5rem;
          border-radius: 0.5rem;
          border: 0.01rem solid black;
+         background-color: green;
+         color: white;
 
          &::marker {
             color: black;
          }
          
          &:hover {
-             color: white;
+             color: green;
              cursor: pointer;
-             background-color: rgb(5, 66, 5);
+            background-color: white;
          }
      }
- }
-
+    }  
+    
     p {
         color: blue;
         margin: 1rem 0;
@@ -128,5 +130,5 @@
         }
     }   
     
-    }
+}
 }

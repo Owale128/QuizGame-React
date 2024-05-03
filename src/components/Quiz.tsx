@@ -31,8 +31,12 @@ export const Quiz: React.FC = () => {
 
     useEffect(() => {
         const getQuestions = async () => {
-            const fetchedQuestions = await fetchQuestions();
-            setQuestions(shuffleQuestions(fetchedQuestions))
+            try{
+                const fetchedQuestions = await fetchQuestions();
+                setQuestions(shuffleQuestions(fetchedQuestions))
+            } catch (error) {
+                console.error('Fel vid hämtning av frågor:', error);
+            }
         };
         getQuestions();
     }, [])

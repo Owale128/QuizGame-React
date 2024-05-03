@@ -84,14 +84,16 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 0.01rem solid black;
+  background-color: green;
+  color: white;
 }
 .container .resultContainer .correctAnswerContainer .correctAnswer::marker {
   color: black;
 }
 .container .resultContainer .correctAnswerContainer .correctAnswer:hover {
-  color: white;
+  color: green;
   cursor: pointer;
-  background-color: rgb(5, 66, 5);
+  background-color: white;
 }
 .container .resultContainer p {
   color: blue;
