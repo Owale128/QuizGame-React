@@ -21,11 +21,11 @@ const HighestScores = () => {
     }, []);
 
     return (
-        <div >
+        <div className="highestScoreContainer">
             <h2>Högsta poäng</h2>
             <ol>
                 {highestScorers.map((user, index) => (
-                    <li key={index}>{user.username} - Poäng: {user.score}</li>
+                    <li key={index}>{user.username} <span className="points"> Poäng: {user.score}</span></li>
                 ))}
             </ol>
         </div>

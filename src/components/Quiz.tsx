@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { IQuestion } from "../interface/IQuestion";
-import { fetchQuestions, submitResult } from "./fetchQuestions";
+import { fetchQuestions } from "../api/fetchQuestions";
+import { submitResult } from "../api/SubmitResult";
 import { shuffleQuestions } from "./ShuffleQuestions";
 import { IUserAnswer } from "../interface/IUserAnswer";
-import HighestScores from "./HighestScore";
+import HighestScores from "../api/HighestScore";
 
 export const Quiz: React.FC = () => {
     const [questions, setQuestions] = useState<IQuestion[]>([]);
@@ -96,7 +97,7 @@ export const Quiz: React.FC = () => {
                     </div>
                     ) : (
                         <div className="questionContainer">
-                            <h2>Quiz</h2>
+                            <h2>Fråga {currentQuestion + 1}</h2>
                             <h3>{questions[currentQuestion]?.question}</h3>
                             <ul>
                                 {questions[currentQuestion]?.options.map((option, index) => (
