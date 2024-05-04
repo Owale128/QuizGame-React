@@ -66,7 +66,7 @@
         font-size: 2rem;
     }
    
-    button {
+    .restartBtn, .scoreBtn, .quitBtn {
         margin: 0.3rem;
         padding: 0.2rem;
         font-size: 1rem;
@@ -77,9 +77,19 @@
         transition: 0.2s ease;
         background-color: black;
         
-        &:hover {
+        &.restartBtn:hover {
             color:black;
-            background-color: rgba(249, 245, 0, 0.555);
+            background-color: rgb(37, 165, 17);
+        }
+
+        &.scoreBtn:hover {
+            color:black;
+            background-color: rgb(208, 219, 12);  
+        }
+
+        &.quitBtn:hover {
+            color:black;
+            background-color: rgb(231, 21, 21);  
         }
     }   
     .correctAnswer {

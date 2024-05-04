@@ -110,9 +110,9 @@ export const Quiz: React.FC = () => {
                              </li>
                             ))}
                         </ol>
-                        <button onClick={restartQuiz}>Starta om</button>
-                        <button onClick={toggleHighestScore}>Högsta poäng</button>
-                        <button onClick={quitQuiz}>Avsluta</button>
+                        <button className="restartBtn" onClick={restartQuiz}>Starta om</button>
+                        <button className="scoreBtn" onClick={toggleHighestScore}>Högsta poäng</button>
+                        <button className="quitBtn" onClick={quitQuiz}>Avsluta</button>
                         {showHighestScore && <HighestScores />}
                     </div>
                     ) : (

@@ -24,22 +24,23 @@
         border-radius: 0.8rem;
         background-color: white;
         border: 0.01rem solid black;
+        border-radius: 1rem;
+        overflow: hidden;
         
         li {
             display: flex;
-            justify-content: center;
             padding: 0.5rem;
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: bold;;
             flex-direction: column;
+            justify-content: center;
             
             &:not(:last-child) {
                 border-bottom: 0.01rem solid black;
             }
 
             &:hover {
-                color: white;
-                background-color: rgb(0, 0, 0);
+                background-color: rgb(228, 228, 66);
             }
             
             .points {
