@@ -1,0 +1,38 @@
+
+form {
+    padding: 4rem;
+    margin-top: 12rem;
+    border-radius: 2rem;
+    border: 0.01rem solid black;
+    background: linear-gradient(to right bottom, rgb(0, 0, 0),rgb(170, 57, 57) , rgb(0, 0, 0));
+    
+    
+    input {
+        width: 15rem;
+        display: block;
+        padding: 0.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+        border-radius: 0.8rem;
+        margin-bottom: 0.8rem;
+        
+        &::placeholder {
+            font-size: 1.2rem;
+        }
+    }
+
+    .submitBtn {
+        color: white;
+        padding: 0.2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-radius: 0.6rem;
+        background-color: rgb(7, 107, 7);
+        
+        &:hover {
+            color: rgb(255, 255, 255);
+           background-color: black;
+        }
+    }
+}

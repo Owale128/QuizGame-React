@@ -1,0 +1,93 @@
+
+.resultContainer {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1.5rem 0 5rem 0;
+    border: 0.1rem solid black;
+    background: linear-gradient(to bottom, rgba(23, 104, 9, 0.81),rgb(182, 182, 182),rgba(11, 58, 3, 0.81));
+    
+    h1, h3 {
+        text-decoration: underline;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    .userAnswerContainer {
+    width: 24rem;
+    padding: 1.8rem;
+     margin: 1rem 0;
+     font-size: 1.3rem;
+     border-radius: 1rem;
+     background-color: white;
+     color: rgb(16, 105, 16);
+     border: 0.01rem solid black;
+
+     .correct, .incorrect {
+         color: white;
+         margin: 0.5rem;
+         padding: 0.5rem;
+         border-radius: 0.5rem;
+         transition: 0.2s ease;
+         border: 0.01rem solid black;
+         
+         &::marker {
+             color: black;
+            }
+         
+            &:hover {
+             cursor: pointer;
+             background-color: white;
+            }
+        }
+    }  
+    
+    .correct {
+        background-color: green;
+
+        &:hover {
+            color: green;
+        }
+    }
+
+    .incorrect {
+
+        background-color: red;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    p {
+        color: blue;
+        margin: 1rem 0;
+        font-size: 2rem;
+    }
+   
+    button {
+        margin: 0.3rem;
+        padding: 0.2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        color: white;
+        margin-bottom: 1rem;
+        border-radius: 0.8rem;
+        transition: 0.2s ease;
+        background-color: black;
+        
+        &:hover {
+            color:black;
+            background-color: rgba(249, 245, 0, 0.555);
+        }
+    }   
+    .correctAnswer {
+        color: green;
+    }
+    
+    .incorrectAnswer {
+        background-color: red;
+    }
+    
+}
