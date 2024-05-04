@@ -5,6 +5,7 @@ import { submitResult } from "../api/SubmitResult";
 import { shuffleQuestions } from "./ShuffleQuestions";
 import { IUserAnswer } from "../interface/IUserAnswer";
 import HighestScores from "../api/HighestScore";
+import Modal from "./Modal";
 
 export const Quiz: React.FC = () => {
     const [questions, setQuestions] = useState<IQuestion[]>([]);
@@ -14,7 +15,11 @@ export const Quiz: React.FC = () => {
     const [userAnswers, setUserAnswers] = useState<IUserAnswer[]>([]);
     const [username, setUsername] = useState<string>("");
     const [usernameInput, setUsernameInput] = useState<string>("");
-    const [showHighestScore, setShowHighestScore] = useState<boolean>(false); 
+    const [showHighestScore, setShowHighestScore] = useState<boolean>(false);
+    const [showModal, setShowModal] = useState<boolean>(false);
+    const [modalQuestion, setModalQuestion] = useState<string>("");
+    const [modalCorrectAnswer, setModalCorrectAnswer] = useState<string>("");
+
 
     const handleAnswer = (selectedAnswerIndex: number) => {
         const isCorrect = selectedAnswerIndex === questions[currentQuestion].correctAnswerIndex;
@@ -80,6 +85,16 @@ export const Quiz: React.FC = () => {
         setShowHighestScore(!showHighestScore);
     };
 
+    const openAnswerModal = (question: string, correctAnswer: string) => {
+        setModalQuestion(question);
+        setModalCorrectAnswer(correctAnswer);
+        setShowModal(true);
+    };
+
+    const closeAnswerModal = () => {
+        setShowModal(false);
+    };
+
     return (
         <div className="container">
             {!username ? (
@@ -99,15 +114,18 @@ export const Quiz: React.FC = () => {
                 {showResult ? (
                     <div className="resultContainer">
                         <h1>Resultat</h1>
-                        <p>Poäng: {score}/{questions.length}</p>
-                        <h3>Dina svar:</h3>
+                        <p className="score">Poäng: {score}/{questions.length}</p>
                         <ol className="userAnswerContainer">
+                        <h3>Dina svar:</h3>
+                        <p>klicka för att se rätt svar</p>
                             {userAnswers.map((answer, index) => (
-                                 <li 
-                                 key={index} 
-                                 className={answer.isCorrect ? "correct" : "incorrect"}>
-                                 {questions[index].options[answer.selectedOption]}
-                             </li>
+                         <li 
+                         key={index} 
+                         className={answer.isCorrect ? "correct" : "incorrect"}
+                         onClick={() => openAnswerModal(questions[index].question, questions[index].options[questions[index].correctAnswerIndex])}
+                         >
+                         {questions[index].options[answer.selectedOption]}
+                     </li>
                             ))}
                         </ol>
                         <button className="restartBtn" onClick={restartQuiz}>Starta om</button>
@@ -130,6 +148,13 @@ export const Quiz: React.FC = () => {
                         </div>
                     )}
                 </>
+            )}
+             {showModal && (
+                <Modal
+                    question={modalQuestion}
+                    correctAnswer={modalCorrectAnswer}
+                    closeModal={closeAnswerModal}
+                />
             )}
         </div>
     )

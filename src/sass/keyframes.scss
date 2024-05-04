@@ -1,0 +1,17 @@
+@keyframes slideIn {
+    from {
+        transform: translateY(-30%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

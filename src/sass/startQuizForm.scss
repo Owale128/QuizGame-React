@@ -1,11 +1,10 @@
-
 form {
     padding: 4rem;
     margin-top: 12rem;
     border-radius: 2rem;
     border: 0.01rem solid black;
+    animation: fadeIn 0.5s ease-in;
     background: linear-gradient(to right bottom, rgb(0, 0, 0),rgb(170, 57, 57) , rgb(0, 0, 0));
-    
     
     input {
         width: 15rem;

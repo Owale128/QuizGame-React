@@ -5,6 +5,7 @@ import './sass/questionContainer.css'
 import './sass/highestScore.css' 
 import './sass/StartQuizForm.css'
 import './sass/resultContainer.css'
+import './sass/modal.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
