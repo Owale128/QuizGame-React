@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IQuestion } from "../interface/IQuestion";
-import { fetchQuestions } from "../api/fetchQuestions";
+import { fetchQuestions } from "../api/FetchQuestions";
 import { submitResult } from "../api/SubmitResult";
 import { shuffleQuestions } from "./ShuffleQuestions";
 import { IUserAnswer } from "../interface/IUserAnswer";
@@ -14,6 +14,7 @@ export const Quiz: React.FC = () => {
     const [userAnswers, setUserAnswers] = useState<IUserAnswer[]>([]);
     const [username, setUsername] = useState<string>("");
     const [usernameInput, setUsernameInput] = useState<string>("");
+    const [showHighestScore, setShowHighestScore] = useState<boolean>(false); 
 
     const handleAnswer = (selectedAnswerIndex: number) => {
         const isCorrect = selectedAnswerIndex === questions[currentQuestion].correctAnswerIndex;
@@ -62,6 +63,18 @@ export const Quiz: React.FC = () => {
         setQuestions(shuffleQuestions(questions));
     };
 
+    const quitQuiz = () => {
+        setUsername("");
+        setCurrentQuestion(0);
+        setScore(0);
+        setShowResult(false);
+        setUserAnswers([]);
+    };
+
+    const toggleHighestScore = () => {
+        setShowHighestScore(!showHighestScore);
+    };
+
     return (
         <div className="container">
             {!username ? (
@@ -92,8 +105,10 @@ export const Quiz: React.FC = () => {
                              </li>
                             ))}
                         </ol>
-                        <button className="restartBtn" onClick={restartQuiz}>Starta om quizen</button>
-                        <HighestScores />
+                        <button onClick={restartQuiz}>Starta om</button>
+                        <button onClick={toggleHighestScore}>Högsta poäng</button>
+                        <button onClick={quitQuiz}>Avsluta</button>
+                        {showHighestScore && <HighestScores />}
                     </div>
                     ) : (
                         <div className="questionContainer">
@@ -106,6 +121,7 @@ export const Quiz: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
+                            <button className="quitBtn" onClick={quitQuiz}>Avsluta</button>
                         </div>
                     )}
                 </>

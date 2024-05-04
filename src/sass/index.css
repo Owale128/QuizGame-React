@@ -12,7 +12,7 @@
 .container .questionContainer {
   margin-top: 5rem;
   width: 40rem;
-  height: 27rem;
+  height: 29rem;
   display: flex;
   max-width: 35rem;
   align-items: center;
@@ -58,6 +58,19 @@
 .container .questionContainer ul li:hover {
   color: white;
   background-color: rgb(39, 150, 39);
+}
+.container .questionContainer button {
+  padding: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 2.5rem;
+  border-radius: 0.3rem;
+  transition: 0.3s ease;
+  border: 0.01rem solid black;
+}
+.container .questionContainer button:hover {
+  color: white;
+  background-color: red;
 }
 .container .resultContainer {
   padding: 1rem;
@@ -115,6 +128,7 @@
   font-size: 2rem;
 }
 .container .resultContainer button {
+  margin: 0.3rem;
   padding: 0.2rem;
   font-size: 1rem;
   cursor: pointer;
@@ -126,7 +140,7 @@
 }
 .container .resultContainer button:hover {
   color: black;
-  background-color: white;
+  background-color: rgba(249, 245, 0, 0.555);
 }
 .container .resultContainer .correctAnswer {
   color: green;
@@ -136,7 +150,7 @@
 }
 .container form {
   padding: 4rem;
-  margin-top: 7rem;
+  margin-top: 12rem;
   border-radius: 2rem;
   border: 0.01rem solid black;
   background: linear-gradient(to right bottom, rgb(0, 0, 0), rgb(170, 57, 57), rgb(0, 0, 0));
