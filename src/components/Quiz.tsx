@@ -3,6 +3,7 @@ import { IQuestion } from "../interface/IQuestion";
 import { fetchQuestions, submitResult } from "./fetchQuestions";
 import { shuffleQuestions } from "./ShuffleQuestions";
 import { IUserAnswer } from "../interface/IUserAnswer";
+import HighestScores from "./HighestScore";
 
 export const Quiz: React.FC = () => {
     const [questions, setQuestions] = useState<IQuestion[]>([]);
@@ -71,27 +72,28 @@ export const Quiz: React.FC = () => {
                             value={usernameInput}
                             onChange={(e) => setUsernameInput(e.target.value)}
                         />
-                        <button type="submit">Börja quizen</button>
+                        <button className="submitBtn" type="submit">Börja quizen</button>
                     </form>
                 </div>
             ) : (
                 <>
-                    {showResult ? (
-                        <div className="resultContainer">
-                            <h1>Resultat</h1>
-                            <p>Poäng: {score}/{questions.length}</p>
-                            <h3>Dina svar:</h3>
-                            <ol className="userAnswerContainer">
-                                {userAnswers.map((answer, index) => (
-                                     <li 
-                                     key={index} 
-                                     className={answer.isCorrect ? "correct" : "incorrect"}>
-                                     {questions[index].options[answer.selectedOption]}
-                                 </li>
-                                ))}
-                            </ol>
-                            <button onClick={restartQuiz}>Starta om quizen</button>
-                        </div>
+                {showResult ? (
+                    <div className="resultContainer">
+                        <h1>Resultat</h1>
+                        <p>Poäng: {score}/{questions.length}</p>
+                        <h3>Dina svar:</h3>
+                        <ol className="userAnswerContainer">
+                            {userAnswers.map((answer, index) => (
+                                 <li 
+                                 key={index} 
+                                 className={answer.isCorrect ? "correct" : "incorrect"}>
+                                 {questions[index].options[answer.selectedOption]}
+                             </li>
+                            ))}
+                        </ol>
+                        <button className="restartBtn" onClick={restartQuiz}>Starta om quizen</button>
+                        <HighestScores />
+                    </div>
                     ) : (
                         <div className="questionContainer">
                             <h2>Quiz</h2>

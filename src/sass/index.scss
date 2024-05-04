@@ -67,13 +67,13 @@
     }
   }
 }
-.resultContainer {
+  .resultContainer {
     
     padding: 1rem;
     border-radius: 1rem;
     border: 0.01rem solid black;
-    background: linear-gradient(to right bottom, rgba(253, 65, 65, 0.879), rgba(0, 163, 8, 0.863));
-
+    background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(182, 182, 182),rgba(11, 58, 3, 0.81));
+    
     h1, h3 {
         text-decoration: underline;
     }
@@ -81,8 +81,9 @@
     h3 {
         font-size: 1.3rem;
     }
-
- .userAnswerContainer {
+    
+    .userAnswerContainer {
+    width: 24rem;
     padding: 1.8rem;
      margin: 1rem 0;
      font-size: 1.3rem;
@@ -92,12 +93,12 @@
      border: 0.01rem solid black;
 
      .correct, .incorrect {
+         color: white;
          margin: 0.5rem;
          padding: 0.5rem;
          border-radius: 0.5rem;
-         border: 0.01rem solid black;
-         color: white;
          transition: 0.2s ease;
+         border: 0.01rem solid black;
          
          &::marker {
              color: black;
@@ -156,5 +157,43 @@
         background-color: red;
     }
     
+}
+
+form {
+    padding: 4rem;
+    margin-top: 7rem;
+    border-radius: 2rem;
+    border: 0.01rem solid black;
+    background: linear-gradient(to right bottom, rgb(0, 0, 0),rgb(170, 57, 57) , rgb(0, 0, 0));
+    
+    
+    input {
+        width: 15rem;
+        display: block;
+        padding: 0.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+        border-radius: 0.8rem;
+        margin-bottom: 0.8rem;
+        
+        &::placeholder {
+            font-size: 1.2rem;
+        }
+    }
+
+    .submitBtn {
+        color: white;
+        padding: 0.2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-radius: 0.6rem;
+        background-color: rgb(7, 107, 7);
+        
+        &:hover {
+            color: rgb(255, 255, 255);
+           background-color: black;
+        }
+    }
 }
 }
