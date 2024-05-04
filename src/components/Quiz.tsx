@@ -51,8 +51,13 @@ export const Quiz: React.FC = () => {
         getQuestions();
     }, []);
 
-    const startQuiz = () => {
-        setUsername(usernameInput);
+    const startQuiz = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (usernameInput.trim() !== "") {
+            setUsername(usernameInput);
+        } else {
+            alert("Var god fyll i ditt användarnamn innan du fortsätter till quizen!");
+        }
     };
 
     const restartQuiz = () => {
