@@ -24,6 +24,7 @@ body {
   justify-content: center;
 }
 .container .questionContainer {
+  position: relative;
   margin-top: 5rem;
   width: 40rem;
   height: 29rem;
@@ -77,10 +78,13 @@ body {
   background-color: rgb(39, 150, 39);
 }
 .container .questionContainer button {
+  bottom: 0;
   padding: 0.3rem;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1rem;
+  position: absolute;
+  margin-bottom: 0.5rem;
   border-radius: 0.3rem;
   transition: 0.3s ease;
   border: 0.01rem solid black;
@@ -88,4 +92,17 @@ body {
 .container .questionContainer button:hover {
   color: white;
   background-color: red;
+}
+
+@media screen and (max-width: 47.94rem) {
+  .container .questionContainer {
+    width: 23rem;
+    height: 32rem;
+  }
+  .container .questionContainer h3 {
+    width: 22rem;
+  }
+  .container .questionContainer ul li {
+    width: 22rem;
+  }
 }/*# sourceMappingURL=questionContainer.css.map */

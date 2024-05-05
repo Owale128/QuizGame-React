@@ -88,4 +88,13 @@
 }
 .resultContainer .incorrectAnswer {
   background-color: red;
+}
+
+@media screen and (max-width: 47.94rem) {
+  .resultContainer {
+    width: 23rem;
+  }
+  .resultContainer .userAnswerContainer {
+    width: 21rem;
+  }
 }/*# sourceMappingURL=resultContainer.css.map */

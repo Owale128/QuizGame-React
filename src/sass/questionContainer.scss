@@ -10,6 +10,7 @@ body {
     justify-content: center;
 
 .questionContainer {
+    position: relative;
         margin-top: 5rem;
         width: 40rem;
         height: 29rem;
@@ -68,10 +69,13 @@ body {
     }
   }
   button {
+      bottom: 0;
       padding: 0.3rem;
       font-size: 1rem;
       cursor: pointer;
       margin-top: 1rem;
+      position: absolute;
+      margin-bottom: 0.5rem;
       border-radius: 0.3rem;
       transition: 0.3s ease;
       border: 0.01rem solid black;
@@ -84,4 +88,27 @@ body {
   }
 }
 
+}
+
+@media screen and (max-width: 47.94rem) {
+  
+    .container{
+
+        .questionContainer {
+            width: 23rem;
+            height: 32rem;
+
+            h3 {
+                width: 22rem;
+            }
+
+            ul {
+
+                li {
+                    width: 22rem;
+                }
+            }
+
+        }
+    }
 }
