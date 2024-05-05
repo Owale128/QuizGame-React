@@ -2,7 +2,7 @@ import { IQuestion } from "../interface/IQuestion";
 
 export const fetchQuestions = async (): Promise<IQuestion[]> => {
     try {
-        const response = await fetch('http://localhost:3000/');
+        const response = await fetch('https://quizbackend-9soc.onrender.com/');
         if (!response.ok) {
             throw new Error('Kunde inte hämta frågor');
         }

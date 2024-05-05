@@ -7,7 +7,7 @@ const HighestScores = () => {
     useEffect(() => {
         const fetchHighestScores = async () => {
             try {
-                const response = await fetch('http://localhost:3000/highestScores');
+                const response = await fetch('https://quizbackend-9soc.onrender.com/highestScores');
                 if (!response.ok) {
                     throw new Error('Kunde inte hämta högsta poäng');
                 }
