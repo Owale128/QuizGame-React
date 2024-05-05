@@ -54,10 +54,11 @@ export const Quiz: React.FC = () => {
 
     const handleAnswer = (selectedAnswerIndex: number) => {
         const isCorrect = selectedAnswerIndex === questions[currentQuestion].correctAnswerIndex;
+        let updatedScore = score;
         if (isCorrect) {
-            setScore(score + 1);
+            updatedScore = score + 1;
         }
-
+    
         const updatedUserAnswers = [...userAnswers];
         updatedUserAnswers.push({ 
             question: questions[currentQuestion].question,
@@ -65,9 +66,11 @@ export const Quiz: React.FC = () => {
             isCorrect: isCorrect
         });
         setUserAnswers(updatedUserAnswers);
-
-        handleNextQuestion();
+        setScore(updatedScore); 
+    
+        handleNextQuestion(); 
     };
+    
 
     const restartQuiz = () => {
         setCurrentQuestion(0);

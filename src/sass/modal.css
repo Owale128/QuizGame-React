@@ -50,4 +50,10 @@
 .modal .modalContent .modalBtn:hover {
   color: white;
   background-color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 47.94rem) {
+  .modal .modalContent {
+    width: 20rem;
+  }
 }/*# sourceMappingURL=modal.css.map */
