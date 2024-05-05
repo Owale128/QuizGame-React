@@ -12,6 +12,7 @@
   border-radius: 1rem;
   background-color: white;
   border: 0.01rem solid black;
+  animation: fadeIn 0.6s ease-in;
 }
 .highestScoreContainer h2 {
   margin-bottom: 0.5rem;

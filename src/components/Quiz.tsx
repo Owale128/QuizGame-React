@@ -5,7 +5,7 @@ import { submitResult } from "../api/SubmitResult";
 import { shuffleQuestions } from "./ShuffleQuestions";
 import { IUserAnswer } from "../interface/IUserAnswer";
 import HighestScores from "../api/HighestScore";
-import Modal from "./Modal";
+import { Modal } from "./Modal";
 
 export const Quiz: React.FC = () => {
     const [questions, setQuestions] = useState<IQuestion[]>([]);

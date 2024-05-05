@@ -15,5 +15,3 @@ export const Modal: React.FC<IModal> = ({ question, correctAnswer, closeModal })
         </div>
     );
 };
-
-export default Modal;
