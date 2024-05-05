@@ -5,7 +5,7 @@ export const submitResult = async (username: string, score: number, userAnswers:
             score: score,
             answers: userAnswers
         };
-        const response = await fetch('http://localhost:3000/routes/userResult', {
+        const response = await fetch('http://localhost:3000/userResult', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -7,7 +7,7 @@ const HighestScores = () => {
     useEffect(() => {
         const fetchHighestScores = async () => {
             try {
-                const response = await fetch('http://localhost:3000/routes/highestScores');
+                const response = await fetch('http://localhost:3000/highestScores');
                 if (!response.ok) {
                     throw new Error('Kunde inte hämta högsta poäng');
                 }
