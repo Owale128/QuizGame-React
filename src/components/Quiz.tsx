@@ -33,6 +33,12 @@ export const Quiz: React.FC = () => {
         getQuestions();
     }, []);
     
+    useEffect(() => {
+        if (showResult) {
+            submitResult(username, score, userAnswers);
+        }
+    }, [showResult]);
+    
     const startQuiz = (e: React.FormEvent) => {
         e.preventDefault();
         if (usernameInput.trim() !== "") {
@@ -48,7 +54,6 @@ export const Quiz: React.FC = () => {
             setCurrentQuestion(nextQuestion);
         } else {
             setShowResult(true);
-            submitResult(username, score, userAnswers);
         }
     };
 
@@ -56,7 +61,7 @@ export const Quiz: React.FC = () => {
         const isCorrect = selectedAnswerIndex === questions[currentQuestion].correctAnswerIndex;
         let updatedScore = score;
         if (isCorrect) {
-            updatedScore = score + 1;
+            updatedScore += 1;
         }
     
         const updatedUserAnswers = [...userAnswers];
@@ -129,13 +134,13 @@ export const Quiz: React.FC = () => {
                             <p>klicka för att se rätt svar</p>
                         )}
                             {userAnswers.map((answer, index) => (
-                         <li 
-                         key={index} 
-                         className={answer.isCorrect ? "correct" : "incorrect"}
-                         onClick={() => openAnswerModal(questions[index].question, questions[index].options[questions[index].correctAnswerIndex])}
-                         >
-                         {questions[index].options[answer.selectedOption]}
-                     </li>
+                                <li 
+                                    key={index} 
+                                    className={answer.isCorrect ? "correct" : "incorrect"}
+                                    onClick={() => openAnswerModal(questions[index].question, questions[index].options[questions[index].correctAnswerIndex])}
+                                >
+                                    {questions[index].options[answer.selectedOption]}
+                                </li>
                             ))}
                         </ol>
                         <button className="restartBtn" onClick={restartQuiz}>Starta om</button>
@@ -143,24 +148,24 @@ export const Quiz: React.FC = () => {
                         <button className="quitBtn" onClick={quitQuiz}>Avsluta</button>
                         {showHighestScore && <HighestScores />}
                     </div>
-                    ) : (
-                        <div className="questionContainer">
-                            <h2>Fråga {currentQuestion + 1}</h2>
-                            <h3>{questions[currentQuestion]?.question}</h3>
-                            <Timer key={currentQuestion} onTimeUp={handleNextQuestion} timeLimit={45} />
-                            <ul>
-                                {questions[currentQuestion]?.options.map((option, index) => (
-                                    <li key={index} onClick={() => handleAnswer(index)}>
-                                        {option}
-                                    </li>
-                                ))}
-                            </ul>
-                            <button className="quitBtn" onClick={quitQuiz}>Avsluta</button>
-                        </div>
-                    )}
+                ) : (
+                    <div className="questionContainer">
+                        <h2>Fråga {currentQuestion + 1}</h2>
+                        <h3>{questions[currentQuestion]?.question}</h3>
+                        <Timer key={currentQuestion} onTimeUp={handleNextQuestion} timeLimit={45} />
+                        <ul>
+                            {questions[currentQuestion]?.options.map((option, index) => (
+                                <li key={index} onClick={() => handleAnswer(index)}>
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                        <button className="quitBtn" onClick={quitQuiz}>Avsluta</button>
+                    </div>
+                )}
                 </>
             )}
-             {showModal && (
+            {showModal && (
                 <Modal
                     question={modalQuestion}
                     correctAnswer={modalCorrectAnswer}
@@ -168,5 +173,5 @@ export const Quiz: React.FC = () => {
                 />
             )}
         </div>
-    )
+    );
 }

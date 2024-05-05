@@ -56,4 +56,7 @@
   .modal .modalContent {
     width: 20rem;
   }
+  .modal .modalContent .modalBtn {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=modal.css.map */
