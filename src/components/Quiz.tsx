@@ -6,6 +6,7 @@ import { shuffleQuestions } from "./ShuffleQuestions";
 import { IUserAnswer } from "../interface/IUserAnswer";
 import HighestScores from "../api/HighestScore";
 import { Modal } from "./Modal";
+import { Timer } from "./Timer";
 
 export const Quiz: React.FC = () => {
     const [questions, setQuestions] = useState<IQuestion[]>([]);
@@ -20,6 +21,36 @@ export const Quiz: React.FC = () => {
     const [modalQuestion, setModalQuestion] = useState<string>("");
     const [modalCorrectAnswer, setModalCorrectAnswer] = useState<string>("");
 
+    useEffect(() => {
+        const getQuestions = async () => {
+            try {
+                const fetchedQuestions = await fetchQuestions();
+                setQuestions(shuffleQuestions(fetchedQuestions));
+            } catch (error) {
+                console.error('Fel vid hämtning av frågor:', error);
+            }
+        };
+        getQuestions();
+    }, []);
+    
+    const startQuiz = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (usernameInput.trim() !== "") {
+            setUsername(usernameInput);
+        } else {
+            alert("Var god fyll i ditt användarnamn innan du fortsätter till quizen!");
+        }
+    };
+
+    const handleNextQuestion = () => {
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < questions.length) {
+            setCurrentQuestion(nextQuestion);
+        } else {
+            setShowResult(true);
+            submitResult(username, score, userAnswers);
+        }
+    };
 
     const handleAnswer = (selectedAnswerIndex: number) => {
         const isCorrect = selectedAnswerIndex === questions[currentQuestion].correctAnswerIndex;
@@ -41,27 +72,6 @@ export const Quiz: React.FC = () => {
         } else {
             setShowResult(true);
             submitResult(username, score, updatedUserAnswers);
-        }
-    };
-
-    useEffect(() => {
-        const getQuestions = async () => {
-            try {
-                const fetchedQuestions = await fetchQuestions();
-                setQuestions(shuffleQuestions(fetchedQuestions));
-            } catch (error) {
-                console.error('Fel vid hämtning av frågor:', error);
-            }
-        };
-        getQuestions();
-    }, []);
-
-    const startQuiz = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (usernameInput.trim() !== "") {
-            setUsername(usernameInput);
-        } else {
-            alert("Var god fyll i ditt användarnamn innan du fortsätter till quizen!");
         }
     };
 
@@ -137,6 +147,7 @@ export const Quiz: React.FC = () => {
                         <div className="questionContainer">
                             <h2>Fråga {currentQuestion + 1}</h2>
                             <h3>{questions[currentQuestion]?.question}</h3>
+                            <Timer key={currentQuestion} onTimeUp={handleNextQuestion} timeLimit={3} />
                             <ul>
                                 {questions[currentQuestion]?.options.map((option, index) => (
                                     <li key={index} onClick={() => handleAnswer(index)}>
