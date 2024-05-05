@@ -33,4 +33,10 @@ form .submitBtn {
 form .submitBtn:hover {
   color: rgb(255, 255, 255);
   background-color: black;
+}
+
+@media screen and (max-width: 47.94rem) {
+  form .submitBtn {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=startQuizForm.css.map */

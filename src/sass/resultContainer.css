@@ -97,4 +97,8 @@
   .resultContainer .userAnswerContainer {
     width: 21rem;
   }
+  .resultContainer .restartBtn, .resultContainer .scoreBtn, .resultContainer .quitBtn {
+    border: none;
+    font-size: 1.1rem;
+  }
 }/*# sourceMappingURL=resultContainer.css.map */

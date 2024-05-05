@@ -119,6 +119,10 @@
         .userAnswerContainer {
             width: 21rem;
         }
+        .restartBtn, .scoreBtn, .quitBtn {
+            border: none;
+            font-size: 1.1rem;
+        }
     }
 
 }
