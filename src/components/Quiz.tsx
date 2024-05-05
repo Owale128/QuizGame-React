@@ -66,13 +66,7 @@ export const Quiz: React.FC = () => {
         });
         setUserAnswers(updatedUserAnswers);
 
-        const nextQuestion = currentQuestion + 1;
-        if (nextQuestion < questions.length) {
-            setCurrentQuestion(nextQuestion);
-        } else {
-            setShowResult(true);
-            submitResult(username, score, updatedUserAnswers);
-        }
+        handleNextQuestion();
     };
 
     const restartQuiz = () => {
@@ -82,13 +76,14 @@ export const Quiz: React.FC = () => {
         setUserAnswers([]);
         setQuestions(shuffleQuestions(questions));
     };
-
+    
     const quitQuiz = () => {
         setUsername("");
         setCurrentQuestion(0);
         setScore(0);
         setShowResult(false);
         setUserAnswers([]);
+        setQuestions(shuffleQuestions(questions));
     };
 
     const toggleHighestScore = () => {
@@ -127,7 +122,9 @@ export const Quiz: React.FC = () => {
                         <p className="score">Poäng: {score}/{questions.length}</p>
                         <ol className="userAnswerContainer">
                         <h3>Dina svar:</h3>
-                        <p>klicka för att se rätt svar</p>
+                        {userAnswers.length > 0 && (
+                            <p>klicka för att se rätt svar</p>
+                        )}
                             {userAnswers.map((answer, index) => (
                          <li 
                          key={index} 
@@ -147,7 +144,7 @@ export const Quiz: React.FC = () => {
                         <div className="questionContainer">
                             <h2>Fråga {currentQuestion + 1}</h2>
                             <h3>{questions[currentQuestion]?.question}</h3>
-                            <Timer key={currentQuestion} onTimeUp={handleNextQuestion} timeLimit={3} />
+                            <Timer key={currentQuestion} onTimeUp={handleNextQuestion} timeLimit={45} />
                             <ul>
                                 {questions[currentQuestion]?.options.map((option, index) => (
                                     <li key={index} onClick={() => handleAnswer(index)}>

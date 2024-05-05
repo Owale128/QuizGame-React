@@ -21,6 +21,6 @@ export const Timer: React.FC<ITimer> = ({ timeLimit, onTimeUp }) => {
     }, [timeLimit]);
 
     return (
-        <p>Tid kvar: {timeLeft} sekunder</p>
+        <p className="timer">Tid kvar: {timeLeft} sekunder</p>
     );
 }

@@ -1,5 +1,9 @@
 @import 'keyframes';
 
+
+body {
+    background-color: black;
+}
 .container {
     display: flex;
     text-align: center;
@@ -15,10 +19,10 @@
         border-radius: 1.5rem;
         flex-direction: column;
         border: 0.01rem solid black;
+        animation: fadeIn 0.5s ease-in;
         background-color: blanchedalmond;
         padding: 0.8rem 1.5rem 1.5rem 1.5rem;
         background: linear-gradient(to right bottom, rgb(114, 164, 205), rgb(81, 72, 153));
-        animation: fadeIn 0.5s ease-in;
     
     h2 {
         font-size: 2.2rem;
@@ -30,11 +34,14 @@
         padding: 1rem;
         font-size: 1.2rem;
         font-weight: 500;
-        margin-bottom: 2rem;
         border-radius: 1.1rem;
         background-color: white;
         border: 0.01rem solid black;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    .timer {
+        margin: 0.5rem 0 2rem 0;
     }
     
     ul {

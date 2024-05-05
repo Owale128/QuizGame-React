@@ -3,7 +3,7 @@
   border-radius: 1rem;
   margin: 1.5rem 0 5rem 0;
   border: 0.1rem solid black;
-  background: linear-gradient(to bottom, rgba(23, 104, 9, 0.81), rgb(182, 182, 182), rgba(11, 58, 3, 0.81));
+  background: linear-gradient(to bottom, rgba(49, 159, 29, 0.81), rgb(182, 182, 182), rgba(11, 58, 3, 0.81));
 }
 .resultContainer h1, .resultContainer h3 {
   text-decoration: underline;
