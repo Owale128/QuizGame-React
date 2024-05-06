@@ -116,8 +116,34 @@
     .resultContainer {
         width: 23rem;
 
+        
         .userAnswerContainer {
             width: 21rem;
+
+
+            .correct {
+                &:hover {
+                    color: white;
+                    background-color: green;
+
+                    &:active {
+                        background-color: white;
+                        color: green;
+                    }
+                }
+            }
+
+            .incorrect {
+                &:hover {
+                    color: white;
+                    background-color: red;
+
+                    &:active {
+                        background-color: white;
+                        color: red;
+                    }
+                }
+            }
         }
         .restartBtn, .scoreBtn, .quitBtn {
             border: none;

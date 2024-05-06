@@ -97,6 +97,22 @@
   .resultContainer .userAnswerContainer {
     width: 21rem;
   }
+  .resultContainer .userAnswerContainer .correct:hover {
+    color: white;
+    background-color: green;
+  }
+  .resultContainer .userAnswerContainer .correct:hover:active {
+    background-color: white;
+    color: green;
+  }
+  .resultContainer .userAnswerContainer .incorrect:hover {
+    color: white;
+    background-color: red;
+  }
+  .resultContainer .userAnswerContainer .incorrect:hover:active {
+    background-color: white;
+    color: red;
+  }
   .resultContainer .restartBtn, .resultContainer .scoreBtn, .resultContainer .quitBtn {
     border: none;
     font-size: 1.1rem;
