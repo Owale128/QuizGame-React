@@ -107,6 +107,10 @@ body {
                 li {
                     width: 22rem;
 
+                    &:hover {
+                        background-color: none;
+                    }
+
                     &:active {
                         color: white;
                         background-color: rgb(39, 150, 39);
