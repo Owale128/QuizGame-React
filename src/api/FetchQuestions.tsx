@@ -51,6 +51,31 @@ const questions = [
         options: ["Grönland", "Madagaskar", "Borneo", "Australien"],
         correctAnswerIndex: 0
     },
+    {
+        question: "Vilken planet är närmast solen?",
+        options: ["Mars", "Venus", "Merkurius", "Jupiter"],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Vem skrev boken 'Ringaren i Notre Dame'?",
+        options: ["Charles Dickens", "Victor Hugo", "Fyodor Dostoevsky", "Jane Austen"],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Vilken är världens största kontinent?",
+        options: ["Europa", "Nordamerika", "Asien", "Afrika"],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Vilken färg får man om man blandar rött och grönt?",
+        options: ["Blå", "Brun", "Gul", "Lila"],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Vem vann mellan Kendrick Lamar och Drake?",
+        options: ["BBL Drizzy", "K.dot"],
+        correctAnswerIndex: 1
+    },
 ];
 
 
