@@ -108,13 +108,12 @@ body {
                     width: 22rem;
 
                     &:hover {
-                        background-color: none;
+                        background-color: black;
                     }
-
                     &:active {
-                        color: white;
-                        background-color: rgb(39, 150, 39);
-                    } 
+                        background-color: green;
+                    }
+                    
                 }
             }
             button {

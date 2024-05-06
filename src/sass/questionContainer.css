@@ -105,6 +105,12 @@ body {
   .container .questionContainer ul li {
     width: 22rem;
   }
+  .container .questionContainer ul li:hover {
+    background-color: black;
+  }
+  .container .questionContainer ul li:active {
+    background-color: green;
+  }
   .container .questionContainer button {
     font-size: 1.2rem;
   }
