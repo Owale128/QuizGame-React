@@ -32,9 +32,9 @@
 
     .modalBtn {
         padding: 0.2rem;
+        cursor: pointer;
         border-radius: 0.4rem;
         transition: 0.2s ease-in;
-        cursor: pointer;
 
         &:hover {
             color: white;
@@ -51,7 +51,7 @@
     
         .modalContent {
             width: 20rem;
-
+            position: relative;
             .modalBtn {
                 font-size: 1.2rem;
             }

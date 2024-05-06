@@ -4,7 +4,7 @@
     border-radius: 1rem;
     margin: 1.5rem 0 5rem 0;
     border: 0.1rem solid black;
-    background: linear-gradient(to bottom, rgba(49, 159, 29, 0.81),rgb(182, 182, 182),rgb(90, 8, 8));
+    background: linear-gradient(to right bottom, rgb(114, 164, 205), rgb(81, 72, 153));
     
     h1, h3 {
         text-decoration: underline;
@@ -69,7 +69,7 @@
     }
 
     .score {
-        color: blue;
+        // color: blue;
        margin: 1rem 0;
        font-size: 1.8rem;
    } 

@@ -43,9 +43,9 @@
 }
 .modal .modalContent .modalBtn {
   padding: 0.2rem;
+  cursor: pointer;
   border-radius: 0.4rem;
   transition: 0.2s ease-in;
-  cursor: pointer;
 }
 .modal .modalContent .modalBtn:hover {
   color: white;
@@ -55,6 +55,7 @@
 @media screen and (max-width: 47.94rem) {
   .modal .modalContent {
     width: 20rem;
+    position: relative;
   }
   .modal .modalContent .modalBtn {
     font-size: 1.2rem;
