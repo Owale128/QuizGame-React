@@ -1,27 +1,9 @@
-# React + TypeScript + Vite
+# Quiz Game (React) 😃
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application that allows users to play a question quiz. It keeps track of questions, user answers, scores and displays results. Additionally, users can enter their name before starting the game. The code also includes functions to restart or exit the quiz and display a list of the highest scores. There is also a modal that displays the correct answer after the user answers the questions.
 
-Currently, two official plugins are available:
+You can visit the page at: https://owalesquizgame.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![WakaQuiz](https://github.com/Owale128/TodoList---Frontend/assets/110387474/65b19f56-8778-4c94-b4f4-3a51e4b37ac0)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Link to my backend repo: https://github.com/Owale128/QuizGame-React
