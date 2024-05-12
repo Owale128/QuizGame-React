@@ -6,4 +6,4 @@ You can visit the page at: https://owalesquizgame.netlify.app/
 
 ![WakaQuiz](https://github.com/Owale128/TodoList---Frontend/assets/110387474/65b19f56-8778-4c94-b4f4-3a51e4b37ac0)
 
-Link to my backend repo: https://github.com/Owale128/QuizGame-React
+Link to my backend repo: [https://github.com/Owale128/QuizGame-React](https://github.com/Owale128/QuizBackend?tab=readme-ov-file)
